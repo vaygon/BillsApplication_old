@@ -80,6 +80,15 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.MVC3.3.2.0.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.core">
       <HintPath>..\packages\NUnitTestAdapter.1.0\lib\nunit.core.dll</HintPath>
       <Private>False</Private>
@@ -147,6 +156,9 @@
     <Reference Include="System.Net.Http">
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -225,11 +237,11 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Bills\Index.cshtml" />
-    <Content Include="Views\Bills\Edit.cshtml" />
-    <Content Include="Views\Bills\Details.cshtml" />
-    <Content Include="Views\Bills\Delete.cshtml" />
-    <Content Include="Views\Bills\Create.cshtml" />
+    <Content Include="Views\Bill\Index.cshtml" />
+    <Content Include="Views\Bill\Edit.cshtml" />
+    <Content Include="Views\Bill\Details.cshtml" />
+    <Content Include="Views\Bill\Delete.cshtml" />
+    <Content Include="Views\Bill\Create.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Views\Web.config" />
     <None Include="Web.Debug.config">
