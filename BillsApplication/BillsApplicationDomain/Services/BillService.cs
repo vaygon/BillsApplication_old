@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BillsApplicationDomain.Repository;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -17,44 +18,36 @@ namespace BillsApplicationDomain.Services
 
     public class BillService : IBillService
     {
+        private IGenericRepository _repo;
+
+        public BillService(IGenericRepository repo)
+        {
+            _repo = repo;
+        }
+
         public List<Bill> GetBills()
         {
-            var listOfBills = new List<Bill>();
-            var db = new BillsDbContext();
-            return db.Bills.ToList();
+            return _repo.FindAll<Bill>().ToList();
         }
 
         public void Add(Bill bill)
-        {            
-            var db = new BillsDbContext();
-            db.Bills.Add(bill);
-            db.SaveChanges();
+        {
+            _repo.Create<Bill>(bill);
         }
 
         public Bill GetBillById(int id)
         {
-            var db = new BillsDbContext();
-            return db.Bills.FirstOrDefault(x => x.Id == id);
+            return _repo.GetById<Bill>(id);
         }
        
         public void Update(Bill bill)
         {
-            using (var db = new BillsDbContext())
-            {
-                db.Bills.Attach(bill);
-                db.Entry(bill).State = EntityState.Modified;
-                db.SaveChanges();
-            }            
+            _repo.Update<Bill>(bill);
         }
                
         public void DeleteBillById(int id)
         {
-            using (var db = new BillsDbContext())
-            {
-                var bill = db.Bills.FirstOrDefault(x => x.Id == id);
-                db.Entry(bill).State = EntityState.Deleted;
-                db.SaveChanges();
-            };
+            _repo.Delete<Bill>(id);
         }
     }
 }

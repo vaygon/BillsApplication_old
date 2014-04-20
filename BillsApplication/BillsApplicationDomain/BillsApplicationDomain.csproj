@@ -66,6 +66,7 @@
     <Compile Include="Bill.cs" />
     <Compile Include="BillsDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Services\BillService.cs" />
   </ItemGroup>
   <ItemGroup>
