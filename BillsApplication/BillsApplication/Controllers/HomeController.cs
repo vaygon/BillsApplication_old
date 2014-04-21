@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BillsApplication.Attributes;
+using BillsApplicationDomain.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,8 +8,10 @@ using System.Web.Mvc;
 
 namespace BillsApplication.Controllers
 {
+    [CustomErrorActionFilter]
     public class HomeController : Controller
     {
+        
         public ActionResult Index()
         {
             return View();
@@ -26,5 +30,13 @@ namespace BillsApplication.Controllers
 
             return View();
         }
+
+        public string Error()
+        {
+            throw new Exception("Error");
+
+            return "EE";
+        }
+
     }
 }

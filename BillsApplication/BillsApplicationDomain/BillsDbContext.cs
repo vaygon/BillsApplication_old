@@ -15,5 +15,6 @@ namespace BillsApplicationDomain
         }
 
         public DbSet<Bill> Bills { get; set;}
+        public DbSet<Error> Errors { get; set; }
     }
 }
